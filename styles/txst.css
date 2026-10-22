@@ -355,6 +355,7 @@ body.txst {
 
 .txst .cards h3 a:any-link {
   color: var(--txst-maroon);
+  text-decoration: none;
 }
 
 .txst .cards p {
@@ -592,8 +593,4 @@ body.txst {
 
 .txst header nav .nav-brand a {
   font-size: 0;
-}
-
-.txst .cards h3 a:any-link {
-  text-decoration: none;
 }
