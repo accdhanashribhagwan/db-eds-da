@@ -35,6 +35,7 @@
     padding: 40px 32px;
   }
 }
+
 /* dark overlay keeps text readable on photos */
 .hero picture::after {
   content: '';
