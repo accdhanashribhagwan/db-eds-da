@@ -583,3 +583,13 @@ body.txst {
   margin-right: 12px;
   vertical-align: middle;
 }
+
+/* links inside running text must not rely on colour alone */
+.txst main p a:not(.button),
+.txst main li a:not(.button) {
+  text-decoration: underline;
+}
+
+.txst header nav .nav-brand a {
+  font-size: 0;
+}
