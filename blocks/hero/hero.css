@@ -35,3 +35,28 @@
     padding: 40px 32px;
   }
 }
+/* dark overlay keeps text readable on photos */
+.hero picture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgb(80 18 20 / 55%);
+}
+
+.hero h2,
+.hero p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero .button-wrapper {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.hero a.button.secondary {
+  border-color: var(--background-color);
+  color: var(--background-color);
+}
