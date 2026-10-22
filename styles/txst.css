@@ -231,7 +231,7 @@ body.txst {
   }
 }
 
-.txst .hero:not(.card) p:first-of-type {
+.txst .hero:not(.card) p:not(:has(picture)) {
   margin: 0;
   font-family: var(--heading-font-family);
   font-size: 18px;
@@ -592,4 +592,8 @@ body.txst {
 
 .txst header nav .nav-brand a {
   font-size: 0;
+}
+
+.txst .cards h3 a:any-link {
+  text-decoration: none;
 }
