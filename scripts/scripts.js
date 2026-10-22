@@ -189,6 +189,8 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  // page-scoped brand styling, only loaded for `template: txst`
+  if (document.body.classList.contains('txst')) await loadCSS(`${window.hlx.codeBasePath}/styles/txst.css`);
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

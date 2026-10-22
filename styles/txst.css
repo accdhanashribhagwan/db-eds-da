@@ -1,0 +1,585 @@
+/* stylelint-disable no-descending-specificity -- every rule is scoped under `.txst`, overrides intentionally follow base rules */
+
+/* Texas State / McCoy look and feel. Loaded only when page metadata sets `template: txst`. */
+
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/public-sans-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/public-sans-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/public-sans-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/josefin-sans-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/josefin-sans-latin-700-normal.woff2') format('woff2');
+}
+
+body.txst {
+  --txst-maroon: #501214;
+  --txst-gold: #ac9155;
+  --txst-brown: #5a410b;
+  --txst-table-head: #64480c;
+  --txst-green: #266725;
+  --txst-beige: #f5f1ee;
+  --txst-grey: #595959;
+  --text-color: #222;
+  --link-color: #00507a;
+  --link-hover-color: #003a59;
+  --light-color: var(--txst-beige);
+  --body-font-family: 'Public Sans', helvetica, calibri, arial, sans-serif;
+  --heading-font-family: 'Josefin Sans', 'Public Sans', helvetica, arial, sans-serif;
+  --body-font-size-m: 17px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+  --nav-height: 72px;
+
+  line-height: 1.9;
+}
+
+/* typography */
+.txst h1,
+.txst h2,
+.txst h3,
+.txst h4 {
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.txst main h2 {
+  font-size: 28px;
+}
+
+.txst main h3 {
+  color: var(--txst-brown);
+  font-size: 21px;
+}
+
+.txst main > .section > div {
+  max-width: 1160px;
+  padding: 0 24px;
+}
+
+@media (width >= 900px) {
+  .txst main > .section > div {
+    padding: 0;
+  }
+}
+
+.txst main > .section {
+  margin: 40px 0;
+}
+
+.txst main > .section.hero-container > div {
+  max-width: none;
+  padding: 0;
+}
+
+.txst main > .section:first-of-type {
+  margin-top: 0;
+}
+
+.txst main .section.highlight {
+  margin: 0;
+  padding: 40px 0;
+  background-color: var(--txst-beige);
+}
+
+/* buttons */
+.txst a.button.primary,
+.txst a.button.primary:any-link {
+  border: 0;
+  border-radius: 2px;
+  padding: 10px 20px;
+  background-color: var(--txst-green);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.txst a.button.primary:hover,
+.txst a.button.primary:focus-visible {
+  background-color: #1b4d1a;
+  color: #fff;
+}
+
+.txst .section.centered {
+  text-align: center;
+}
+
+.txst .section.centered > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 560px;
+}
+
+.txst .section.centered > div > * {
+  flex: 0 0 100%;
+}
+
+.txst .section.centered > div::before {
+  content: '';
+  display: block;
+  border-top: 1px solid #ccc;
+}
+
+.txst .section.centered h2,
+.txst .section.centered h3 {
+  margin: 0;
+  color: #000;
+  font-family: var(--heading-font-family);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.txst .section.centered h2 {
+  margin-top: 0.8em;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.txst .section.centered h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.txst .section.centered p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.txst .section.centered sup {
+  font-size: 14px;
+  vertical-align: baseline;
+}
+
+.txst .section.centered .button-wrapper {
+  flex: 0 0 260px;
+  margin: 28px 10px 0;
+}
+
+.txst .section.centered a.button {
+  width: 260px;
+}
+
+.txst .section.button-row > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.txst .section.button-row .button-wrapper {
+  flex: 1 1 200px;
+  max-width: 300px;
+  margin: 0;
+}
+
+.txst .section.button-row a.button {
+  width: 100%;
+}
+
+/* hero banner */
+.txst .hero {
+  min-height: 325px;
+  padding: 140px 0 40px;
+}
+
+.txst .hero picture::after {
+  background-color: rgb(80 18 20 / 82%);
+}
+
+.txst .hero > div > div {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (width >= 900px) {
+  .txst .hero > div > div {
+    padding: 0;
+  }
+}
+
+.txst .hero:not(.card) p:first-of-type {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.txst .hero h1 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 52px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.txst .hero h1::after {
+  content: '';
+  display: block;
+  width: 90px;
+  margin-top: 28px;
+  border-top: 1px solid var(--txst-gold);
+}
+
+/* hero with overlay card */
+.txst .hero.card {
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+  padding: 40px 24px;
+}
+
+.txst .hero.card picture::after {
+  display: none;
+}
+
+.txst .hero.card > div {
+  width: 100%;
+}
+
+.txst .hero.card > div > div {
+  max-width: 421px;
+  padding: 28px 32px;
+  background-color: rgb(232 227 219 / 95%);
+  color: #363534;
+  text-align: center;
+}
+
+.txst .hero.card h2,
+.txst .hero.card p {
+  max-width: none;
+  color: #363534;
+}
+
+.txst .hero.card h2 {
+  margin: 0;
+  color: #7a5c14;
+  font-family: var(--heading-font-family);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.txst .hero.card p {
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+
+.txst .hero.card .button-wrapper {
+  margin: 16px 6px 0;
+}
+
+.txst .hero.card a.button.secondary {
+  border: 1px solid #363534;
+  border-radius: 3px;
+  padding: 10px 20px;
+  color: var(--txst-maroon);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.txst .hero.card a.button.secondary:hover {
+  background-color: #fff;
+}
+
+/* program cards */
+.txst .cards > ul {
+  grid-template-columns: 1fr;
+  gap: 40px 60px;
+}
+
+@media (width >= 900px) {
+  .txst .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.txst .cards > ul > li {
+  border: 0;
+  background: none;
+  text-align: center;
+}
+
+.txst .cards .cards-card-body {
+  margin: 0;
+}
+
+.txst .cards .icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.txst .cards h3 {
+  margin: 4px 0 8px;
+  color: var(--txst-maroon);
+  font-family: var(--heading-font-family);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.txst .cards h3 a:any-link {
+  color: var(--txst-maroon);
+}
+
+.txst .cards p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* contact block */
+.txst .columns h3 {
+  margin-top: 0;
+}
+
+.txst .columns .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.txst .columns.round .columns-img-col img {
+  max-width: 188px;
+}
+
+/* table */
+.txst .table table th {
+  background-color: var(--txst-table-head);
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+
+.txst .table table thead tr {
+  border: 0;
+}
+
+.txst .table table td {
+  font-size: 17px;
+  line-height: 32px;
+}
+
+.txst .table table th,
+.txst .table table td {
+  padding: 7px 16px;
+}
+
+.txst .table table tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.txst sup a:any-link {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* header */
+.txst header .nav-wrapper {
+  border-bottom: 4px solid var(--txst-gold);
+  background-color: #fff;
+}
+
+.txst header nav {
+  max-width: 1160px;
+  padding: 0 24px;
+}
+
+@media (width >= 900px) {
+  .txst header nav {
+    padding: 0;
+  }
+}
+
+.txst header .nav-brand {
+  flex-basis: 196px;
+}
+
+.txst header nav .nav-brand .icon {
+  display: block;
+  width: 196px;
+  height: 44px;
+}
+
+.txst header nav .nav-brand img {
+  width: 100%;
+  height: 100%;
+}
+
+.txst header nav .nav-sections a:any-link {
+  color: var(--txst-maroon);
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* footer */
+.txst footer {
+  background-color: var(--txst-grey);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.txst footer .footer > div > .section > div {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (width >= 900px) {
+  .txst footer .footer > div > .section > div {
+    padding: 0;
+  }
+}
+
+.txst footer .footer > div {
+  max-width: none;
+  padding: 0;
+}
+
+.txst footer .footer > div > .section {
+  max-width: none;
+  margin: 0;
+}
+
+.txst footer .section.footer-breadcrumbs {
+  padding: 12px 0;
+  background-color: var(--txst-beige);
+  color: #222;
+  font-size: 14px;
+}
+
+.txst footer .section.footer-breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.txst footer .section.footer-breadcrumbs a:any-link {
+  color: #222;
+}
+
+.txst footer .section.footer-main {
+  padding: 40px 0;
+  background-color: var(--txst-grey);
+}
+
+.txst footer .columns > div {
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.txst footer .columns > div > div {
+  flex: 1;
+}
+
+.txst footer .columns > div > div:first-child {
+  flex: 1.4;
+}
+
+.txst footer h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.txst footer a:any-link {
+  color: #fff;
+}
+
+.txst footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.txst footer li {
+  margin: 0 0 6px;
+}
+
+.txst footer p {
+  margin: 0 0 14px;
+}
+
+.txst footer .section.footer-main a:has(> .icon) {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0;
+}
+
+.txst footer .section.footer-main .icon {
+  width: 28px;
+  height: 28px;
+}
+
+.txst footer .section.footer-legal {
+  padding: 18px 0;
+  background-color: var(--txst-maroon);
+}
+
+.txst footer .section.footer-legal > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+}
+
+.txst footer .section.footer-legal p {
+  margin: 0;
+}
+
+.txst footer .section.footer-legal a {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.txst footer .section.footer-legal .icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
