@@ -10,7 +10,8 @@ Ground truth for migration skills (see AGENTS.md for repo rules). Anything not r
 ## Scope
 - Source: `https://www.mccoy.txst.edu/graduate.html` (single page pilot)
 - Target path: `/graduate`
-- Excluded: site header/footer/nav (not migrated in this run), all other pages, forms backends, search.
+- Header/footer: migrated page-scoped as `/txst/nav` and `/txst/footer` (used only by pages with `template: txst`); the site's own `/nav` and `/footer` are untouched.
+- Excluded: all other pages, forms backends, the Search widget and Menu drawer.
 
 ## Mapping rules
 - Prefer default content; minimise blocks. Reuse existing blocks in `/blocks` (cards, columns, hero, widget, fragment) before requesting new ones.
