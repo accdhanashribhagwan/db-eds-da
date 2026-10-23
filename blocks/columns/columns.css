@@ -31,3 +31,25 @@
     order: unset;
   }
 }
+
+/* narrow image beside text (e.g. portrait, accreditation logos) */
+.columns.side-image .columns-img-col img {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .columns.side-image > div > .columns-img-col {
+    flex: 0 0 250px;
+  }
+
+  .columns.side-image > div > div:not(.columns-img-col) {
+    flex: 1;
+  }
+}
+
+.columns.round .columns-img-col img {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
