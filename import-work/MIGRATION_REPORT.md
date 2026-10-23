@@ -80,13 +80,23 @@ Still different from the source (known):
 
 ## 6. Open items
 
-1. Page description is a draft (source had none): 145 chars, summarises the programs; needs content-owner approval
+1. ~~Page description~~ resolved: see section 6a
 2. P1 (cutover): remap 12 internal links once target URLs for /graduate/* pages exist
 3. INSTRUCTIONS.md scope line still says header/footer excluded: update. `/txst/nav` and `/txst/footer` only apply to pages with `template: txst`
 4. G4: UAT and brand sign-off with QA + business owner; G5 cutover not started
 5. `npm audit` high severity findings in repo devDependencies (brace-expansion, braces, babel/ajv; build-time tooling only). Left unchanged by decision; `npm audit fix` would alter the lockfile
 6. Security hygiene: two AEM MCP tokens in `~/.claude/settings.json` and two DA tokens were exposed in the session transcript — rotate
 7. Local-only artifacts, not committed: `.claude/skills/` (38 skills), `Playbook/`, `import-work/`
+
+## 6a. Content added that is not on the source site
+
+| Item | Detail | Status |
+|---|---|---|
+| Page meta description | The source page has no meta description (only title, Open Graph and canonical). Added: "Graduate programs at the McCoy College of Business, Texas State University: MBA, DBA, accounting, data analytics, finance and marketing research." (145 chars) | Written by Claude to fill the SEO gap; approved by user on 2026-10-23; live on aem.live |
+| Metadata `template`, `nav`, `footer` | `txst`, `/txst/nav`, `/txst/footer`: scoping properties for the page-scoped look and feel | Technical, no visible content |
+| Image alt texts for hero images | Source banner and photo had no alt text in the page body; added "Graduate student in cap and gown" and "Students walking on the Texas State campus" | Written by Claude; not individually approved |
+| Footer/nav link text for logos | "Texas State University" (visually hidden) as accessible name for logo links | Accessibility fix |
+| Eyebrow separator | Source shows two links with a gold slash; target uses the plain text "Texas State University / McCoy College of Business" | Content preserved, markup differs |
 
 ## 7. Environment workarounds
 
